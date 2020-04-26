@@ -1,0 +1,50 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container" >
+    <div class ="jumbotron" style="margin-top: 50px;" >
+      <h1 style="text-align: center;"> Reddit Flair Detector </h1>
+
+      <form action="{{ url_for('home') }}" method="POST" >
+        <div class = "form-group row">
+           <label for="url" align="center">Enter URL </label>
+          <input type="text" id="url" name="url" class ="form-control" required aria-describedby="Help">
+
+        </div>
+        <input align="center" type="submit" class ="btn btn-primary">
+      </form>
+      {% if(result["result"]):%}
+      <div>
+        <p><span style="font-weight: bold;">Title</span> - {{result["title"]}}</p>
+        <p>This post might have <span style="font-weight: bold;">{{result["result"]}}</span> Flair.</p>
+      </div>
+      {% endif %}
+      <div></div>
+
+    </div>
+  </div>
+      <div class="container" >
+          <div class ="jumbotron" style="margin-top: 50px;" >
+            <h2>Detects flairs for r/India subreddits</h2>
+            <h3>Ashish Salunkhe, ashishsalunkhe@ieee.org</h3>
+            <br>
+            <br>
+<h4>What are submission flairs and what are they used for?</h4>
+<p>Submission flairs are the text-boxes that appear next to your submission title when you post something on <a href="/r/India" rel="nofollow">/r/India</a>. There are various different submission flairs but we will get to each category later. The flairs help users in filtering the content of this subreddit. For example if you want to look at all the Political submissions then simply click on the yellow &#39;Politics&#39; text-box next to any political submission and you will land up in <a href="https://www.reddit.com/r/india/search?sort=new&amp;restrict_sr=on&amp;q=flair%3APolitics" rel="nofollow"><strong>this page</strong></a>.</p>
+<h4>How do I know what flair to use?</h4>
+<p>Use common sense, for example:</p>
+<ul>
+<li><strong>Reddiquette:</strong> If you want a civil and focused discussion with NO off-topic comments, choose &#39;Rediquette&#39;. We do not allow trolling and other unnecessary behaviour in threads marked as &#39;Reddiquette&#39; threads. Please don&#39;t use this for &#39;zoke&#39; threads. </li>
+<li><strong>Policy:</strong> All posts about central or state policies must be flaired &#39;Policy&#39;. If your submission is about rural electrification or regulating app-based cab services, then the submission must be flaired &#39;Policy&#39;. If you post a question about a policy then the post must be flaired as &#39;Policy&#39; and not &#39;AskIndia&#39;. </li>
+<li><strong>Politics:</strong> All posts about politics and politicians in India must be flaired as &#39;Politics&#39; (unless &#39;Policy&#39; is the more appropriate choice). Even if the submission is about the fact that a certain politician has their favorite shoe-fetching airlines, the post must be flaired as Politics. Again, if you post a question about Indian politics or politicians then the post must be flaired as &#39;Politics&#39; and not &#39;AskIndia&#39;. </li>
+<li><strong>Science &amp; Technology / Food / Sports:</strong> These are self-explanatory. All submissions about sci-tech must be flaired as &#39;Science &amp; Technology&#39; as long they have no policy/political aspect. If the submission is about research on Zika virus then flair it as &#39;Science &amp; Technology&#39;, if the submission is about allocation of central funds in Zika virus research then flair it as &#39;Policy&#39;, if the submission is about how a certain minister claims that his/her influence accelerated the progress of Zika virus research then flair it as &#39;Politics&#39;. Same reasoning applies for &#39;Food&#39; and &#39;Sports&#39;.</li>
+<li><strong>AskIndia:</strong> This flair is to be used only when you post a question and if none of the previous flair is applicable.</li>
+<li><strong>Scheduled:</strong> For all the RDD submissions and other weekly/biweekly/monthly submissions. </li>
+<li><strong>Non-Political:</strong> When none of the above flairs are applicable use this flair.</li>
+</ul>
+          </div>
+      </div>
+</body>
+</html>
